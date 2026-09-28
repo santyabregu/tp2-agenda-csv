@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda de Contactos - UTN FRT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Agenda de Contactos</h1>
+    <p>Persistencia en CSV &bull; Actividad Práctica 2</p>
+  </header>
+
+  <main class="contenedor">
+    
+    <!-- Ventana de Registro de Contactos -->
+    <section class="card form-seccion">
+      <h2>Nuevo Contacto</h2>
+      <form id="form-contacto">
+        
+        <div class="campo">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" required placeholder="Ej: Santiago">
+        </div>
+
+        <div class="campo">
+          <label for="apellido">Apellido:</label>
+          <input type="text" id="apellido" required placeholder="Ej: Veliz">
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" required pattern="[0-9]{8,15}" placeholder="Ej: 3865123456">
+        </div>
+
+        <div class="campo">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required placeholder="contacto@ejemplo.com">
+        </div>
+
+        <div class="campo">
+          <label for="imagen">URL de Imagen de Perfil:</label>
+          <input type="url" id="imagen" placeholder="https://ejemplo.com/avatar.jpg">
+          <small>Si se deja vacío, se asignará un avatar por defecto.</small>
+        </div>
+
+        <button type="submit" class="btn-guardar">Registrar Contacto</button>
+      </form>
+    </section>
+
+    <!-- Lista de Contactos Registrados -->
+    <section class="card lista-seccion">
+      <div class="encabezado-lista">
+        <h2>Contactos Guardados</h2>
+        <span id="total-contactos" class="contador">0 contactos</span>
+      </div>
+
+      <div id="contenedor-contactos" class="grid-contactos">
+        <!-- Renderizado dinámico desde app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 - Universidad Tecnológica Nacional (FRT)</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
